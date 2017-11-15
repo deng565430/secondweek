@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "pm2 start pm2.json && pm2 logs",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/app.js"
+    "stop": "pm2 stop secondweek && pm2 delete secondweek",
+    "start": "npm run dev"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,7 @@
     "koa-router": "^7.3.0",
     "koa-static": "^4.0.1",
     "koa-views": "^6.1.2",
-    "mysql": "^2.15.0"
+    "mysql": "^2.15.0",
+    "shelljs": "^0.7.8"
   }
 }

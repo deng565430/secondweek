@@ -1,0 +1,18 @@
+{
+	/**
+    * Application configuration section
+    * http://pm2.keymetrics.io/docs/usage/application-declaration/
+    * 多个服务，依次放到apps对应的数组里
+    */
+ "apps": [{
+  "name": "secondweek",
+  "script": "./server/app.js",
+  "error_file"   : "./logs/server-err.log",
+  "out_file"    : "./logs/server-out.log",
+  "merge_logs"   : true,
+  "instances": "max",
+  "log_date_format" : "YYYY-MM-DD HH:mm Z",
+  "watch": true,
+  "exec_mode": "cluster"
+ }]
+}

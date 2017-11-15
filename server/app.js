@@ -32,5 +32,5 @@ app.use(routers.routes()).use(routers.allowedMethods());
 
 // 监听启动端口
 app.listen(config.prot, () => {
-	console.log(`the server is start at prot ${config.prot}`);
+	console.log(`The server is start at prot ${config.prot}`);
 });
