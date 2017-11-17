@@ -28,7 +28,16 @@
     "koa-router": "^7.3.0",
     "koa-static": "^4.0.1",
     "koa-views": "^6.1.2",
-    "mysql": "^2.15.0",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2",
     "shelljs": "^0.7.8"
+  },
+  "devDependencies": {
+    "jasmine-core": "^2.8.0",
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "phantomjs": "^2.1.7"
   }
 }

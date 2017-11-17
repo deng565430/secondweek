@@ -2,12 +2,12 @@ const path = require('path');
 const Koa2 = require('koa');
 const convert = require('koa-convert');
 const views = require('koa-views');
-const koaStatic = require('koa-static');
+const serve = require('koa-static');
 const koaLogger = require('koa-logger');
 const bodyParser = require('koa-bodyparser');
 
 
-const config = require('../config/config.js');
+const CONFIG = require('../config/config.js');
 const routers = require('./routers/index');
 
 
@@ -20,10 +20,10 @@ app.use(convert(koaLogger()));
 app.use(bodyParser());
 
 // 配置静态资源加载中间件
-app.use(convert(koaStatic(path.join(__dirname, './../static'))));
+app.use(serve(CONFIG.get('staticDir')));
 
 // 配置服务端模版渲染引擎中间件
-app.use(views(path.join(__dirname, './views'), {
+app.use(views(CONFIG.get('viewDir'), {
 	extension: 'ejs'
 }))
 
@@ -31,6 +31,6 @@ app.use(views(path.join(__dirname, './views'), {
 app.use(routers.routes()).use(routers.allowedMethods());
 
 // 监听启动端口
-app.listen(config.prot, () => {
-	console.log(`The server is start at prot ${config.prot}`);
+app.listen(CONFIG.get('prot'), () => {
+	console.log(`The server is start at prot ${CONFIG.get('prot')}`);
 });

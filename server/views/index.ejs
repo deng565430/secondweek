@@ -3,10 +3,38 @@
   <head>
     <meta charset="utf-8">
     <title><%= title %></title>
+    <link rel="stylesheet" href="css/index.css">
     <script src="https://cdn.bootcss.com/systemjs/0.20.19/system.js" type="text/javascript" charset="utf-8"></script>
   	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js" type="text/javascript" charset="utf-8"></script>
   </head>
   <body>
-    <div>222</div>
+    <div class="test" id="btn">
+
+    </div>
+    <div class="" id="hintBtn">
+
+    </div>
+    <script>
+    SystemJS.import('js/index.js').then(res => {
+      console.log(res.thumb)
+      $.extend({
+        thumb: res.thumb
+      })
+      document.getElementById('btn').addEventListener('click', function(e) {
+        if ($.thumb.clickTenTimes()) {
+          document.getElementById('hintBtn').innerHTML = $.thumb.num+1
+          console.log(document.getElementById('hintBtn').innerHTML)
+          document.getElementById('hintBtn').setAttribute('class', 'hint')
+          setTimeout(() => {
+            document.getElementById('hintBtn').setAttribute('class', '')
+            document.getElementById('hintBtn').innerHTML = ''
+          }, 400)
+        } else {
+          e.target.setAttribute('class', 'test stop-test')
+
+        }
+      })
+    });
+  </script>
   </body>
 </html>
