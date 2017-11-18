@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "pm2 start pm2.json && pm2 logs",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "koama test/server.js",
     "stop": "pm2 stop secondweek && pm2 delete secondweek",
-    "start": "npm run dev"
+    "start": "npm run dev",
+    "e2e": "node test/e2e.js",
   },
   "repository": {
     "type": "git",
@@ -38,6 +39,11 @@
     "karma-chrome-launcher": "^2.2.0",
     "karma-jasmine": "^1.1.0",
     "karma-phantomjs-launcher": "^1.0.4",
-    "phantomjs": "^2.1.7"
+    "mocha": "^4.0.1",
+    "phantomjs": "^2.1.7",
+    "protractor": "^5.2.0",
+    "selenium-standalone": "^6.11.0",
+    "selenium-webdriver": "^3.6.0",
+    "supertest": "^3.0.0"
   }
 }

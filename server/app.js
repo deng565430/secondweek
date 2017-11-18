@@ -34,3 +34,5 @@ app.use(routers.routes()).use(routers.allowedMethods());
 app.listen(CONFIG.get('prot'), () => {
 	console.log(`The server is start at prot ${CONFIG.get('prot')}`);
 });
+
+module.exports = app;

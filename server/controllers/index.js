@@ -11,8 +11,8 @@ const indexController = {
   },
   update () {
     return async (ctx, next) => {
-      const indexModule = new indexModule(ctx)
-      ctx.body = await indexModule.updateNum();
+      const indexModules = new indexModule(ctx)
+      ctx.body = await indexModules.updateNum();
     }
   }
 }
